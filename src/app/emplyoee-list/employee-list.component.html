@@ -1,0 +1,71 @@
+<a>employee list works </a>
+
+<p></p>
+<p></p>
+<div class="container">
+    <div class="row">
+    
+        <div class="input-group">
+            <input type="text" class="form-control rounded"   [(ngModel)]="searchText" placeholder="Search by id ,name,designation,country" aria-label="Search" aria-describedby="search-addon" />
+            <button type="button" class="btn btn-outline-primary">Search</button>
+          </div>
+       <div>
+           <hr>
+       </div>
+    
+
+        <table class="table table-striped table-dark">
+            <thead>
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Designation
+                    </th>
+                    <th>
+                        Country
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of employees|filter:searchText">
+                    <td>
+                        {{employee.id}}
+                    </td>
+                    <td>
+                        {{employee.name}}
+                    </td>
+                    <td>
+                        {{employee.designation}}
+                    </td>
+                    <td>
+                        {{employee.country}}
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+
+
+    </div>
+
+</div>
+<nav>
+   
+   
+</nav>
+<nav>
+    <ul>
+        <li><a routerLink="createemployee">createemployee</a></li>
+    </ul>
+    <ul>
+        <li><a routerLink="employeedetails">employee detail</a></li>
+    </ul>
+   
+</nav>
+<router-outlet></router-outlet>
